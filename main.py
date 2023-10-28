@@ -46,9 +46,9 @@ def root():
 
 
 @app.post("/post", summary='Get Post')
-def post() -> Dict:
+def post() -> Timestamp:
     post_db.append(Timestamp(id=post_db[-1].id + 1, timestamp = 10))
-    return {"id": post_db[-1].id, "timestamp": post_db[-1].timestamp}
+    return post_db[-1]
 
 
 @app.post("/dog", summary='Create Dog', response_model=Dog)
