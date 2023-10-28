@@ -59,7 +59,7 @@ def create_dog(dog: Dog) -> Dog:
 
 @app.get("/dog", summary='Get Dogs')
 def get_dogs(kind: DogType) -> List[Dog]:
-    return [{dogs_db[k]} for k in dogs_db.keys() if dogs_db[k].kind == kind]
+    return [dogs_db[k] for k in dogs_db.keys() if dogs_db[k].kind == kind]
 
 
 @app.get("/dog/{pk}", summary='Get Dog By Pk')
